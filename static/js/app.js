@@ -123,6 +123,39 @@ var layout = {
 
 Plotly.newPlot(d3.selectAll("#bubble").node(), data2, layout);
 
+///// GAUGE
+var data = [
+  {
+    domain: { x: [0, 1], y: [0, 1] },
+    value: id_freq,
+    title: { text: "Belly Button Washing Frequency: Scrubs per Week"},
+    type: "indicator",
+    mode: "gauge+number",
+    gauge: {
+      axis: { range: [null, 9], tickwidth: 1, tickcolor: "black"  },
+      steps: [
+        { range: [0, 1], color: '#faf2cd'},
+        { range: [1, 2], color: "#f0e6b9" },
+        { range: [2, 3], color: "#e0d7ab" },
+        { range: [3, 4], color: "#d7e0ab" },
+        { range: [4, 5], color: "#cde0ab" },
+        { range: [5, 6], color: "#b3cf8c" },
+        { range: [6, 7], color: "#9dcf8c" },
+        { range: [7, 8], color: "#7dba68" },
+        { range: [8, 9], color: "#60994d" },
+      ],
+      threshold: {
+        line: { color: "red", width: 4},
+        thickness: 0.75,
+        value: id_freq
+      }
+    }
+  }
+];
+
+var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+Plotly.newPlot(d3.selectAll("#gauge").node(), data, layout);
+
 
 var select = document.getElementById("selDataset"); 
 var options = result;
@@ -261,10 +294,40 @@ function optionChanged() {
     width: 1000
   };
   
+  var data3 = [
+    {
+      domain: { x: [0, 1], y: [0, 1] },
+      value: id_freq,
+      title: { text: "Belly Button Washing Frequency: Scrubs per Week"},
+      type: "indicator",
+      mode: "gauge+number",
+      gauge: {
+        axis: { range: [null, 9], tickwidth: 1, tickcolor: "black"  },
+        steps: [
+          { range: [0, 1], color: '#faf2cd'},
+          { range: [1, 2], color: "#f0e6b9" },
+          { range: [2, 3], color: "#e0d7ab" },
+          { range: [3, 4], color: "#d7e0ab" },
+          { range: [4, 5], color: "#cde0ab" },
+          { range: [5, 6], color: "#b3cf8c" },
+          { range: [6, 7], color: "#9dcf8c" },
+          { range: [7, 8], color: "#7dba68" },
+          { range: [8, 9], color: "#60994d" },
+        ],
+        threshold: {
+          line: { color: "red", width: 4},
+          thickness: 0.75,
+          value: id_freq
+        }
+      }
+    }
+  ];
   
+  var layout3 = { width: 600, height: 450, margin: { t: 0, b: 0 } };
   
    Plotly.newPlot(d3.selectAll("#bar").node(), data1, layout1, config);
    Plotly.newPlot(d3.selectAll("#bubble").node(), data2, layout2);
+   Plotly.newPlot(d3.selectAll("#gauge").node(), data3, layout3);
     }
   
     
