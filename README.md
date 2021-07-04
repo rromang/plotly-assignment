@@ -17,3 +17,7 @@ This work was made to fulfill the work assigned in the Data Visualization bootca
  ### Event listener
  
  The code obtained before to populate the initial landing page was modified to work with the optionChanged function. The index number for the sample_id was used to acquire the correct subdictionary based on the dropdown menu selection.
+
+ ### Gauge Chart
+
+ The code for the gauge chart was modified from the plotly reference site. It was not possible for me to add the text to the divisions, however, the gauge does respond to the event listener and shows the necessary information. Several webpages did gauge by modifying a plotly pie chart. It felt uncessary to do so since plotly already provides for a gauge chart.
